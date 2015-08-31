@@ -74,13 +74,13 @@
 (deftest find-L-all-cases
   (testing "Null cases"
     (are [x] (nil? x)
-	 (find-L nil)
-	 (find-L [])
-	 (find-L "")))
+	 (find-lpos nil)
+	 (find-lpos [])
+	 (find-lpos "")))
   (testing "Usual cases"
-    (is (= (find-L (find-reverse-N "cabdabdab")) [0 0 0 0 5 0 0 2 0]))
-    (is (= (find-L (find-reverse-N "ab:abab")) [0 0, 0, 0 0, 4 0]))
-    (is (= (find-L (find-reverse-N "dabababab")) [0 0 0 6, 0 4 0 2, 0]))))
+    (is (= (find-lpos (find-reverse-N "cabdabdab")) [0 0 0 0 5 0 0 2 0]))
+    (is (= (find-lpos (find-reverse-N "ab:abab")) [0 0, 0, 0 0, 4 0]))
+    (is (= (find-lpos (find-reverse-N "dabababab")) [0 0 0 6, 0 4 0 2, 0]))))
 
 (deftest find-l-all-cases
   (testing "Null cases"

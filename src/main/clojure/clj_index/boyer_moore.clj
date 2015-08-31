@@ -62,7 +62,7 @@
   (find-z (reverse pattern)))
 
 (defn- find-L-map
-  "Returns the result similar to find-L function but in map format."
+  "Returns the result similar to find-lpos function but in map format."
   [rev-n-values]
   (when (seq rev-n-values)
     (let [n (count rev-n-values)]
@@ -76,7 +76,7 @@
 	(transient {})
 	(range (- n 2)))))))
 
-(defn find-L
+(defn find-lpos
   ([rev-n-values]
      "Implements good-suffix rule for Boyer-Moore algorithm,
       rev-n-values - is the z-values of the reversed pattern
@@ -188,5 +188,5 @@
      pattern
      (count pattern)
      (find-char-idx pattern)
-     (find-L reverse-n)
+     (find-lpos reverse-n)
      (find-l reverse-n))))
